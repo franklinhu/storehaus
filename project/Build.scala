@@ -255,11 +255,10 @@ object StorehausBuild extends Build {
     libraryDependencies ++= Seq (
       "com.twitter" %% "bijection-core" % bijectionVersion,
       "com.twitter" %% "bijection-avro" % bijectionVersion,
-      "org.apache.kafka" % "kafka_2.9.2" % "0.8.0" % "provided" excludeAll(
+      "org.apache.kafka" %% "kafka" % "0.8.0" % "provided" excludeAll(
         ExclusionRule(organization = "com.sun.jdmk"),
         ExclusionRule(organization = "com.sun.jmx"),
-        ExclusionRule(organization = "javax.jms")),
-      "org.specs2" %% "specs2" % specs2Version % "test"
+        ExclusionRule(organization = "javax.jms"))
     ),
     // we don't want various tests clobbering each others keys
     parallelExecution in Test := false
