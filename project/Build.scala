@@ -267,7 +267,7 @@ object StorehausBuild extends Build {
   lazy val storehausMongoDB = module("mongodb").settings(
     libraryDependencies ++= Seq(
       "com.twitter" %% "bijection-core" % bijectionVersion,
-      "org.mongodb" %% "casbah" % "2.6.4"
+      "org.mongodb" %% "casbah" % "2.8.1"
     ),
     parallelExecution in Test := false
   ).dependsOn(storehausAlgebra % "test->test;compile->compile")
@@ -275,7 +275,7 @@ object StorehausBuild extends Build {
   lazy val storehausElastic = module("elasticsearch").settings(
     libraryDependencies ++= Seq (
       "org.elasticsearch" % "elasticsearch" % "0.90.9",
-      "org.json4s" %% "json4s-native" % "3.2.6",
+      "org.json4s" %% "json4s-native" % "3.2.9",
       "com.google.code.findbugs" % "jsr305" % "1.3.+",
       "com.twitter" %% "bijection-json4s" % bijectionVersion
     ),
