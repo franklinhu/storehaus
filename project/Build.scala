@@ -53,7 +53,7 @@ object StorehausBuild extends Build {
     organization := "com.twitter",
     scalaVersion := "2.10.5",
     version := "0.11.1",
-    crossScalaVersions := Seq("2.10.5"),
+    crossScalaVersions := Seq("2.10.5", "2.11.6"),
     javacOptions ++= Seq("-source", "1.6", "-target", "1.6"),
     javacOptions in doc := Seq("-source", "1.6"),
     libraryDependencies += "org.scalatest" %% "scalatest" % scalatestVersion % "test",
@@ -238,7 +238,7 @@ object StorehausBuild extends Build {
     libraryDependencies ++= Seq (
       "com.twitter" %% "bijection-core" % bijectionVersion,
       "com.twitter" %% "bijection-avro" % bijectionVersion,
-      "org.apache.kafka" %% "kafka" % "0.8.0" % "provided" excludeAll(
+      "org.apache.kafka" %% "kafka" % "0.8.2.0" % "provided" excludeAll(
         ExclusionRule(organization = "com.sun.jdmk"),
         ExclusionRule(organization = "com.sun.jmx"),
         ExclusionRule(organization = "javax.jms"))
