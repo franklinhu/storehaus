@@ -118,7 +118,6 @@ object StorehausBuild extends Build {
   val scaldingVersion = "0.14.0"
   val finagleVersion = "6.25.0"
   val scalatestVersion = "2.2.4"
-  val specs2Version = "1.13"
   lazy val storehaus = Project(
     id = "storehaus",
     base = file("."),
@@ -244,8 +243,7 @@ object StorehausBuild extends Build {
         ExclusionRule("com.sun.jdmk", "jmxtools"),
         ExclusionRule("com.sun.jmx", "jmxri"),
         ExclusionRule("javax.jms", "jms")
-      ),
-      "org.specs2" %% "specs2" % specs2Version % "test"
+      )
     ),
     // we don't want various tests clobbering each others keys
     parallelExecution in Test := false
